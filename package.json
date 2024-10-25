@@ -1,0 +1,32 @@
+{
+  "name": "alishah-imageextraction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/pubsub": "^4.8.0",
+    "@googleapis/smartdevicemanagement": "^3.0.2",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "uuid": "^9.0.1",
+    "multer": "^1.4.5-lts.1",
+    "cloudinary": "^2.2.0",
+    "express-validator": "^7.2.0",
+    "googleapis": "^144.0.0",
+    "mongoose": "^8.7.1",
+    "nest-cam": "^1.0.5",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "socket.io": "^4.8.0",
+    "wrtc": "^0.4.7"
+  }
+}
