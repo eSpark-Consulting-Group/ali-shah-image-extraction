@@ -117,7 +117,7 @@ async function listenForMessages() {
       data.resourceUpdate?.events["sdm.devices.events.CameraPerson.Person"];
     const eventThreadState = data.eventThreadState;
 
-    if (eventType && eventThreadState === "STARTED") {
+    if (eventType && eventThreadState) {
       // Prepare payload for the webhook
       const payload = {
         resourceGroup: data.resourceGroup,
@@ -389,7 +389,7 @@ const isAccessTokenExpired = (user) => {
 };
 
 // Start the server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   try {
