@@ -5,6 +5,8 @@ const session = require("express-session");
 require("dotenv").config();
 const app = express();
 const bodyParser = require("body-parser");
+const { v2: cloudinary } = require("cloudinary");
+
 const connectDB = require("./db/db"); // Import the database connection
 const User = require("./schema/User");
 const { google } = require("googleapis");
@@ -31,6 +33,12 @@ const TOKEN_PATH = "middleware/auth/token.json";
 
 const TOPIC_NAME = process.env.TOPIC_NAME;
 const SUBSCRIPTION_NAME = process.env.SUBSCRIPTION_NAME;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 function getNewToken(oAuth2Client) {
   return new Promise((resolve, reject) => {
