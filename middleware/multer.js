@@ -19,6 +19,6 @@ let upload = multer({
   fileSize: 1048576,
 });
 
-const singleImage = upload.single("avatar");
+const singleImage = upload.single("snapshot");
 
 module.exports = { singleImage };
