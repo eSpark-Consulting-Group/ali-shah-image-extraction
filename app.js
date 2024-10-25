@@ -6,6 +6,7 @@ require("dotenv").config();
 const app = express();
 const bodyParser = require("body-parser");
 const { v2: cloudinary } = require("cloudinary");
+const verifyToken = require("./middleware/auth/auth");
 
 const connectDB = require("./db/db"); // Import the database connection
 const User = require("./schema/User");
@@ -234,6 +235,29 @@ passport.use(
     }
   )
 );
+
+app.get("/snapshots", verifyToken, async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const skip = (page - 1) * limit;
+    const totalItems = await Snapshot.countDocuments();
+    const items = await Snapshot.find().skip(skip).limit(limit);
+
+    const totalPages = Math.ceil(totalItems / limit);
+    res.status(200).json({
+      totalItems,
+      totalPages,
+      currentPage: page,
+      pageSize: items.length,
+      items,
+    });
+  } catch (error) {
+    console.error("Error fetching snapshots:", error);
+    res.status(500).json({ message: "Failed to fetch snapshots" });
+  }
+});
 
 // Serialize user into the session
 passport.serializeUser((user, done) => {
