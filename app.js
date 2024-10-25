@@ -295,18 +295,19 @@ app.post("/saveSnapshot", singleImage, async (req, res, next) => {
 
   const result = await uploadFilesToCloudinary([file]);
 
-  const avatar = {
+  const snapShot = {
     public_id: result[0].public_id,
     url: result[0].url,
   };
 
-  const payload = req.body.payload;
+  const eventId = req.body.eventId;
+  const resourceGroup = req.body.resourceGroup;
 
   // Create a new snapshot document
   const newSnapshot = new Snapshot({
-    eventId: payload.eventId,
-    resourceGroup: payload.resourceGroup,
-    avatar: avatar,
+    eventId: eventId,
+    resourceGroup: resourceGroup,
+    snapShot: snapShot,
   });
 
   try {

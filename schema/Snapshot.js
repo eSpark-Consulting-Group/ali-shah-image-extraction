@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const snapshotSchema = new mongoose.Schema({
   eventId: { type: String, required: true },
   resourceGroup: { type: String, required: true },
-  avatar: {
+  snapShot: {
     public_id: { type: String, required: true },
     url: { type: String, required: true },
   },
