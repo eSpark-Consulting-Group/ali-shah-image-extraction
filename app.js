@@ -16,6 +16,7 @@ const fs = require("fs");
 const readline = require("readline");
 const { PubSub } = require("@google-cloud/pubsub");
 const Snapshot = require("./schema/snapshot"); // Import the Snapshot model
+const cron = require("node-cron");
 
 let clientStreams = [];
 const { singleImage } = require("./middleware/multer");
@@ -121,6 +122,8 @@ async function listenForMessages() {
     if (eventType && eventThreadState) {
       // Prepare payload for the webhook
       const payload = {
+        eventType: "takeSnapshot",
+
         resourceGroup: data.resourceGroup,
         eventId: data.eventId,
       };
@@ -169,6 +172,17 @@ app.get("/stream", (req, res) => {
     clientStreams = clientStreams.filter((stream) => stream !== res);
   });
 });
+function writeToStream() {
+  const payload = {
+    eventType: "takeSnapshot",
+    timestamp: new Date().toISOString(),
+  };
+  if (clientStreams.length > 0) {
+    clientStreams.forEach((stream) => {
+      stream.write(`data: ${JSON.stringify(payload)}\n\n`);
+    });
+  }
+}
 
 app.use(
   session({
@@ -412,6 +426,10 @@ const isAccessTokenExpired = (user) => {
   return currentTime - issuedAt > expiresIn * 1000; // Convert seconds to milliseconds
 };
 
+cron.schedule("*/1 * * * *", () => {
+  writeToStream();
+  console.log("Data written to stream at:", new Date().toISOString());
+});
 // Start the server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, async () => {
