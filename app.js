@@ -7,6 +7,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const { v2: cloudinary } = require("cloudinary");
 const verifyToken = require("./middleware/auth/auth");
+const cors = require("cors");
 
 const connectDB = require("./db/db"); // Import the database connection
 const User = require("./schema/User");
