@@ -42,6 +42,9 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
+// Enable CORS for all origins
+app.use(cors());
+
 function getNewToken(oAuth2Client) {
   return new Promise((resolve, reject) => {
     const authUrl = oAuth2Client.generateAuthUrl({
