@@ -1,0 +1,30 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+}
+
+.download-btn {
+  display: block;
+  width: 30%;
+  cursor: pointer;
+  border: none;
+  padding: 7px;
+  background: #4dccc6;
+  color: white;
+  text-transform: uppercase;
+}
+#image-container {
+  /* width: 80%; */
+  margin: 0 auto;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
