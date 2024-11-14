@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tidal-solstice-429616-q3",
+  "private_key_id": "c078c10760efb2d22c5f17e63867d1cb934e770d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnw6NW8ZDVexR+\nOK/eoJNScp0pnEEHkCtLt3BIeqrdKKno+dLoOhYE6pA8Y71nLuIsmmNziiyxAgK3\nE+y3qndzXYIh0fF3v7w3pW1xnE/gdTxiGCdwXWXpBkTzb/yRSMM7MT8pK8+G1CQE\nprq5/UsFGafk2F1ecB3xHjwWLJrSL6/YEHXngbWlxAr+oSysXLnKRAVyHGJfHYKM\nlPHmHetW1pNEVaXEXHgctG9/1DQblijOcdV69LlrCXs/877LF5zK5N/q2QzkCRQs\ndOKonUWHBMRJur8vrZUS+tdpx4/UXCRQlJNWsEWJSZYMjBIa40GHKb0h7mUAUcPc\nB2Ry9WDJAgMBAAECggEADAVLvoK11+QXLHGjoWI0WCmj+vuqGbCB962Lzzex50Gf\nBhVjgDYMRpsnjVows7RjaqJ/2oMlr2O3XdagxSrC3xptxP5Z7NSJWBvjfwreGtVP\np7A3IDkjAJrNRTuql17lNUgysECmQLER6R7ovYOplNKZKf+6VfZW4ORjlgupZsK7\n9g5cOWwpIaKgfu9vP6Q8ckghTZ1Ly+0F6ulMkehRSLFG35pY9MSpLNQ9mVnQ9iZR\ncucKRnI10r8bhCB1ozyJBOAa8Qk8MmHJI664ly/ss6DN8eSaTWX17bp4MBID236/\nHiW2c6Ti4fPJ0yGZwYOE/l6jRvHFc14v/7xmMSAyoQKBgQDdJQPoozOLJQZsQXGE\nVyiOMxMT6OdN9DQnDXYXuTGHX5uWpUdNZkfpFusmlviPo1KLbqM2as1WXmjTP5M5\n8zT5t3y8jt8UXqApng2RftSHEeJdQM2v9k2FNmn1HQ0O0YFOT8zFByuhyXPeVYxq\nbSECsfE7Dw7W0wmKeEjTGc/M4QKBgQDCNMXJ2kjxdM7eAhdeE/ZyVnFJwbUrdzwz\n8SfxnOYAbsfRfD4M20wJ3jSadCFfKxMjTRFfi8T/i+YWoraST8pdDhIyaV70pqNj\n5ZbHWhkbRJ8mwbLHMeRoqGEa94QRIVnPn6ft2xux7Ox/O+DkyqvYhrJuifXu3e73\n6dF5oCjo6QKBgQDHAyKrXwNpux42mgZwVId4wNnwVu6hppywcFrQKqc57n50abTr\nIJqiVy+zgLWbfh0wwZY7yI2Vpkyrn1D9G7OW7ttgTSrQh/+WtFf9kaftDdkqlsEE\nE6HbugZMwaIYrc2yDfp3bWaEqGiPs2kz9ZV5eW1f+sMd7LlvVaQj5dytwQKBgEV/\nlyx2NlZaQ9GFFBGxuScPsjj/3jKw19WKvo2jZVfQTSe1e4skS2DYqSCA4JRrGM0w\nPkBgB16gFPYSwp03eqa0a2So+rc4jw4n0j6DCqsMcpvvA2hvfVrKrv10iEmNEtPP\nQcxH9fBFZhjeN8wIj1jMUzxlmKIjv+nuPe11mE5JAoGAGTpMepfF5+EQqITsWFSG\n9B5ncbueaxlCVLGtAW/sdCd4ip0Zvrabe1O8CwbQ6cCnD+d9gveg7R50ClhrdVpa\nMylZgVRi46ONf6TWclUFM5vjPbKitw8IZDm3SG985d6ohwSpwy5RNsIgO5WYZkdc\nWn6RdmJm+/fvfyyUxxMVr/c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "nest-951@tidal-solstice-429616-q3.iam.gserviceaccount.com",
+  "client_id": "112791990664783713546",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nest-951%40tidal-solstice-429616-q3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
