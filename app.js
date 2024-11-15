@@ -260,10 +260,24 @@ app.get("/snapshots", verifyToken, async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
 
     const skip = (page - 1) * limit;
-    const totalItems = await Snapshot.countDocuments();
-    const items = await Snapshot.find().skip(skip).limit(limit);
+
+    const from = req.query.from ? new Date(req.query.from) : null;
+    const to = req.query.to ? new Date(req.query.to) : null;
+
+    const query = {};
+    if (from && to) {
+      query.createdAt = { $gte: from, $lte: to };
+    } else if (from) {
+      query.createdAt = { $gte: from };
+    } else if (to) {
+      query.createdAt = { $lte: to };
+    }
+
+    const totalItems = await Snapshot.countDocuments(query);
+    const items = await Snapshot.find(query).skip(skip).limit(limit);
 
     const totalPages = Math.ceil(totalItems / limit);
+
     res.status(200).json({
       totalItems,
       totalPages,
