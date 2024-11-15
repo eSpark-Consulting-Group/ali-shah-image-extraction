@@ -3,6 +3,7 @@ body {
   min-width: 860px;
   padding: 8px;
   margin: auto; */
+  font-family: "Roboto", sans-serif;
 }
 
 .grid-container {

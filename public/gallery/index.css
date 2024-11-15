@@ -1,7 +1,36 @@
+body {
+  /* max-width: 1200px;
+  min-width: 860px;
+  padding: 8px;
+  margin: auto; */
+  font-family: "Roboto", sans-serif;
+}
+
+.skeleton {
+  width: 400px;
+  height: 250px;
+  background-color: #e0e0e0;
+  margin: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
 .btn-wrapper {
   display: flex;
   justify-content: center;
   align-items: baseline;
+  margin-bottom: 20px;
 }
 
 .image-wrapper {
@@ -20,11 +49,80 @@
   color: white;
   text-transform: uppercase;
 }
+
 #image-container {
-  /* width: 80%; */
   margin: 0 auto;
 }
+
 .button-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#find-button {
+  cursor: pointer;
+  padding: 10px 16px;
+  margin-left: 10px;
+  border: none;
+  background-color: #4dccc6;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+#find-button:hover {
+  background-color: #42b6b0;
+}
+
+#find-button.loading::after {
+  content: "";
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -7px;
+  margin-left: -7px;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="date"]:focus {
+  border-color: #4dccc6;
+  outline: none;
 }
