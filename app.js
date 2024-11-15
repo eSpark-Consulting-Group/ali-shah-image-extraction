@@ -274,7 +274,10 @@ app.get("/snapshots", verifyToken, async (req, res) => {
     }
 
     const totalItems = await Snapshot.countDocuments(query);
-    const items = await Snapshot.find(query).skip(skip).limit(limit);
+    const items = await Snapshot.find(query)
+      .sort({ createdAt: -1 }) // Sort by createdAt in descending order
+      .skip(skip)
+      .limit(limit);
 
     const totalPages = Math.ceil(totalItems / limit);
 
